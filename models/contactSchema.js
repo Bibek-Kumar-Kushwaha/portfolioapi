@@ -6,6 +6,6 @@ const userSchema = new mongoose.Schema({
     message: { type: String},
 });
 
-const UserData = mongoose.model('UserData', userSchema);
+const contactData = mongoose.model('contactData', userSchema);
 
-export default UserData;
+export default contactData;

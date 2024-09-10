@@ -3,6 +3,6 @@ import { createContactMessage } from '../controllers/contactController.js';
 
 const router = express.Router();
 
-router.post('/contact', createContactMessage);
+router.post('/message', createContactMessage);
 
 export default router;
