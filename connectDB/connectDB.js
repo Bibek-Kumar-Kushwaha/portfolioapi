@@ -11,17 +11,10 @@ const connectToDB = async () => {
         if (!URI || !DBNAME) {
             throw new Error('Database URI or name is missing in the environment variables');
         }
-
-        // Connect to MongoDB with dbName specified
-        await mongoose.connect(URI, {
-            dbName: DBNAME,
-            useNewUrlParser: true,
-            useUnifiedTopology: true
-        });
-
+        await mongoose.connect(URI, { dbName: DBNAME });
         console.log('Connected to MongoDB');
     } catch (error) {
-        console.error('Connection error:', error.message || error);
+        console.error('Connection error:', error);
     }
 };
 
