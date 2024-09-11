@@ -1,4 +1,4 @@
-import UserData from '../models/contactSchema.js';
+import contactData from '../models/contactSchema.js';
 
 export const createContactMessage = async (req, res) => {
     const { name, email, message } = req.body;
@@ -8,7 +8,7 @@ export const createContactMessage = async (req, res) => {
     }
 
     try {
-        const newContact = new UserData({ name, email, message });
+        const newContact = new contactData({ name, email, message });
         await newContact.save();
         res.status(200).json({ message: 'Message received' });
     } catch (error) {
