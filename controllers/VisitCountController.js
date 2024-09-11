@@ -5,6 +5,10 @@ const incrementVisitCount = async (req, res) => {
     let visitCount = await VisitCount.findOne();
 
     if (!visitCount) {
+      visitCount = new VisitCount({ count: 0 });
+  }
+  
+    if (!visitCount) {
       visitCount = new VisitCount();
     }
 

@@ -1,4 +1,4 @@
-import encryptPassword from '../Utils/Bcrypt.js';
+import encryptPassword from '../Utils/bcrypt.js';
 import userRegisterSchema from '../models/userRegisterSchema.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken'
@@ -86,7 +86,7 @@ const login = async (req, res) => {
             httpOnly: true,
             secure: true,
             path: '/',
-            expiresIn: 84600 * 7,
+            expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
             sameSite: 'None'
         }
 
