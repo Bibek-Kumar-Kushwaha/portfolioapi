@@ -55,7 +55,7 @@ const getProjectData = async (req, res) => {
   try {
     const data = await projectUploder.find();
 
-    if (!data || data.length === 0) {
+    if (!data) {
       return res.status(404).json({
         success: false,
         message: 'No project data found',
