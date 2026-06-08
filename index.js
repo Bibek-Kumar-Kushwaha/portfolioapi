@@ -13,11 +13,17 @@ dotenv.config();
 const app = express();
 
 // app.use(cors());
-app.use(cors({
-    origin: "https://www.bibekkumarkushwaha.com.np",
+app.use(
+  cors({
+    origin: [
+      "https://www.bibekkumarkushwaha.com.np",
+      "https://portfolio-github-io-a7um.vercel.app"
+    ],
     methods: ["GET", "PUT", "DELETE", "POST"],
-    credentials: true, 
-}));
+    credentials: true,
+  })
+);
+
 app.use(helmet());
 const PORT = process.env.PORT || 3000;
 
